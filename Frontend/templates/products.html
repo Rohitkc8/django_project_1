@@ -1,0 +1,38 @@
+{% extends 'navbar.html'%}
+
+{% block content %}
+<h1>All products in db ......</h1>   
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product coe</th>
+            <th>Price</th>
+            <th>Is_This_Food</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+    </thead>
+    <body>
+    
+    {% for product in all_products %}
+    <tr>
+        <td>{{product.product_name}}</td>
+        <td>{{product.product_code}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.isthis_food}}</td>
+        <td>
+            <a href="{% url 'product_update' product.id %}">
+            <button>Update</button>
+            </a>
+        </td>
+        <td>
+            <a href="{% url 'product_delete' product.id %}">
+            <button>Delete</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+  </body>  
+</table>
+{% endblock%}
