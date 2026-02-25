@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Pageee</title>
+</head>
+<body>
+    <h2>SIGNUP</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <label>Firstname:</label><br>
+        <input type="text" name="firstname" required><br><br>
+
+        <label>Lastname:</label><br>
+        <input type="text" name="lastname" required><br><br>
+
+        <p>{{error}}</p>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
